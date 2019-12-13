@@ -3,18 +3,25 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "serve": "vue-cli-service serve",
+    "serve": "vue-cli-service serve --port=5000 --https",
     "build": "vue-cli-service build",
     "test:unit": "vue-cli-service test:unit",
-    "lint": "vue-cli-service lint"
+    "lint": "vue-cli-service lint",
+    "dll": "webpack --config  ./build/webpack.dll.config.js --progress",
+    "lint:style": "vue-cli-service lint:style"
   },
   "dependencies": {
+    "axios": "^0.18.0",
     "core-js": "^3.4.3",
+    "element-ui": "^2.4.5",
+    "normalize.css": "^8.0.1",
     "vue": "^2.6.10",
     "vue-router": "^3.1.3",
     "vuex": "^3.1.2"
   },
   "devDependencies": {
+    "@ascendancyy/vue-cli-plugin-stylelint": "^1.1.2",
+    "@gfx/zopfli": "^1.0.14",
     "@vue/cli-plugin-babel": "^4.1.0",
     "@vue/cli-plugin-eslint": "^4.1.0",
     "@vue/cli-plugin-router": "^4.1.0",
@@ -23,22 +30,42 @@
     "@vue/cli-service": "^4.1.0",
     "@vue/eslint-config-standard": "^4.0.0",
     "@vue/test-utils": "1.0.0-beta.29",
+    "add-asset-html-webpack-plugin": "^3.1.3",
     "babel-eslint": "^10.0.3",
+    "babel-plugin-component": "^1.1.1",
+    "babel-plugin-transform-remove-console": "^6.9.4",
+    "brotli-webpack-plugin": "^1.1.0",
     "chai": "^4.1.2",
+    "clean-webpack-plugin": "^3.0.0",
+    "compression-webpack-plugin": "^3.0.1",
     "eslint": "^5.16.0",
     "eslint-plugin-vue": "^5.0.0",
+    "image-webpack-loader": "^6.0.0",
     "less": "^3.0.4",
     "less-loader": "^5.0.0",
     "lint-staged": "^9.4.3",
-    "vue-template-compiler": "^2.6.10"
+    "mini-css-extract-plugin": "^0.8.0",
+    "optimize-css-assets-webpack-plugin": "^5.0.3",
+    "sass-resources-loader": "^2.0.1",
+    "style-resources-loader": "^1.3.2",
+    "stylelint": "^12.0.0",
+    "stylelint-config-standard": "^18.2.0",
+    "vue-cli-plugin-axios": "0.0.4",
+    "vue-cli-plugin-element": "^1.0.1",
+    "vue-template-compiler": "^2.6.10",
+    "webpack-cli": "^3.3.10"
   },
-  "gitHooks": {
-    "pre-commit": "lint-staged"
-  },
-  "lint-staged": {
-    "*.{js,vue}": [
-      "vue-cli-service lint",
-      "git add"
-    ]
-  }
+  // "gitHooks": {
+  //   "pre-commit": "lint-staged"
+  // },
+  // "lint-staged": {
+  //   "*.{js,vue}": [
+  //     "vue-cli-service lint",
+  //     "git add"
+  //   ],
+  //   "*.{vue,htm,html,css,sss,less,scss}": [
+  //     "vue-cli-service lint:style",
+  //     "git add"
+  //   ]
+  // }
 }
